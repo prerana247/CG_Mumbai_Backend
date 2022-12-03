@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend.Repository
 {
-    public class UserRepo
+    public class UserRepo : IUserRepo
     {
         private readonly CGDbContext _DbContext;
 
@@ -26,6 +26,8 @@ namespace Backend.Repository
             await _DbContext.SaveChangesAsync();
             return result.Entity;
         }
+
+
 
 
     }

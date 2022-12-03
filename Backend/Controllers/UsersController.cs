@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
 using Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Backend.Controllers
 {
+    [Authorize(Roles="Mentor")]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
@@ -22,6 +24,7 @@ namespace Backend.Controllers
         }
 
         // GET: api/Users
+       
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUser()
         {

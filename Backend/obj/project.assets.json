@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "CsvHelper/28.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "MailKit/3.3.0": {
         "type": "package",
         "dependencies": {
@@ -3049,6 +3065,30 @@
     }
   },
   "libraries": {
+    "CsvHelper/28.0.1": {
+      "sha512": "T/Eid0mP/GeWV1RcxmUPSsBCtOm6wHbFII6iFydPfpIa6cd+siec0KGrLq5uabI8sH6crFi84OA1vNLkp8Lzlw==",
+      "type": "package",
+      "path": "csvhelper/28.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "csvhelper.28.0.1.nupkg.sha512",
+        "csvhelper.nuspec",
+        "lib/net45/CsvHelper.dll",
+        "lib/net45/CsvHelper.xml",
+        "lib/net47/CsvHelper.dll",
+        "lib/net47/CsvHelper.xml",
+        "lib/net5.0/CsvHelper.dll",
+        "lib/net5.0/CsvHelper.xml",
+        "lib/net6.0/CsvHelper.dll",
+        "lib/net6.0/CsvHelper.xml",
+        "lib/netstandard2.0/CsvHelper.dll",
+        "lib/netstandard2.0/CsvHelper.xml",
+        "lib/netstandard2.1/CsvHelper.dll",
+        "lib/netstandard2.1/CsvHelper.xml"
+      ]
+    },
     "MailKit/3.3.0": {
       "sha512": "+TkmnfnicAgtwmPDiqZ/CvtLh7z36o44wjgvJzkbFXyGSnhVxmUWdvnzerA6EqslPTP9nK8aWqoQvr1uMpeHCw==",
       "type": "package",
@@ -9206,6 +9246,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "CsvHelper >= 28.0.1",
       "MailKit >= 3.3.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.29",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.31",
@@ -9222,11 +9263,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ABC\\source\\repos\\CG_iEval\\Backend\\Backend.csproj",
+      "projectUniqueName": "C:\\Users\\ABC\\Downloads\\CG_iEval\\Backend\\Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "C:\\Users\\ABC\\source\\repos\\CG_iEval\\Backend\\Backend.csproj",
+      "projectPath": "C:\\Users\\ABC\\Downloads\\CG_iEval\\Backend\\Backend.csproj",
       "packagesPath": "C:\\Users\\ABC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ABC\\source\\repos\\CG_iEval\\Backend\\obj\\",
+      "outputPath": "C:\\Users\\ABC\\Downloads\\CG_iEval\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ABC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9255,6 +9296,10 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "CsvHelper": {
+            "target": "Package",
+            "version": "[28.0.1, )"
+          },
           "MailKit": {
             "target": "Package",
             "version": "[3.3.0, )"

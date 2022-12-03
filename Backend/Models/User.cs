@@ -20,19 +20,43 @@ namespace Backend.Models
 
         [DataType("varchar(30)")]
         [Required(ErrorMessage = "Email cannot be empty")]
-        public string EmailId { get; set; }
+        public string PersonalMail { get; set; }
 
-        [Required(ErrorMessage = "Mobile no. cannot be empty")]
-        [MinLength(10)]
-        [MaxLength(10)]
-        public string MobileNumber { get; set; }
+
+
+
+        [DataType("varchar(30)")]
+        [Required(ErrorMessage = "Email cannot be empty")]
+        public string CorpMail { get; set; }
 
         [Required]
         public string Gender { get; set; }
 
+        [Required(ErrorMessage = "Mobile no. cannot be empty")]
+        [Phone]
+        public string MobileNumber { get; set; }
+
+
         [Required]
         [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime DOJ { get; set; }
+
+
+        [Required]
+        [DataType("varchar(30)")]
+        public string Grade { get; set; }
+
+
+        [Required]
+        public string Location { get; set; }
+
+        [Required]
+        [Column(TypeName = "nvarchar(24)")]
+        public string Role{ get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -40,9 +64,10 @@ namespace Backend.Models
         public string Password { get; set; }
 
 
-        [Required]
-        [Column(TypeName = "nvarchar(24)")]
-        public Roles Role{ get; set; }
+        public int OTP { get; set; }
+
+        public bool isVerified { get; set; }
+
 
 
 

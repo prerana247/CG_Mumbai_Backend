@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Backend.Migrations
 {
-    public partial class User : Migration
+    public partial class newFirst : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,12 +15,18 @@ namespace Backend.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(nullable: false),
                     LastName = table.Column<string>(nullable: false),
-                    EmailId = table.Column<string>(nullable: false),
-                    MobileNumber = table.Column<string>(maxLength: 10, nullable: false),
+                    PersonalMail = table.Column<string>(nullable: false),
+                    CorpMail = table.Column<string>(nullable: false),
                     Gender = table.Column<string>(nullable: false),
+                    MobileNumber = table.Column<string>(nullable: false),
                     DOB = table.Column<DateTime>(nullable: false),
+                    DOJ = table.Column<DateTime>(nullable: false),
+                    Grade = table.Column<string>(nullable: false),
+                    Location = table.Column<string>(nullable: false),
+                    Role = table.Column<string>(type: "nvarchar(24)", nullable: false),
                     Password = table.Column<string>(maxLength: 8, nullable: false),
-                    Role = table.Column<int>(nullable: false)
+                    OTP = table.Column<int>(nullable: false),
+                    isVerified = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
