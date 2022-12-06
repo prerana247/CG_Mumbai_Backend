@@ -56,7 +56,7 @@ namespace Backend.Controllers
         {
             try
             {
-                UserLogin user = new UserLogin()
+                NewUserLogin user = new NewUserLogin()
                 {
                     PersonalMail = Mail1,
                     CorpMail = Mail2
@@ -91,7 +91,7 @@ namespace Backend.Controllers
             try
             {
                 //User newUser = new User();
-                UserLogin user = new UserLogin()
+                NewUserLogin user = new NewUserLogin()
                 {
                     CorpMail = Mail1,
                     OTP = otp
@@ -149,7 +149,7 @@ namespace Backend.Controllers
 
         #region Authenticate Method
         ///<summary>Authenticate method</summary> 
-        private User Authenticate(UserLogin userLogin)
+        private User Authenticate([FromBody]UserLogin userLogin)
         {
             var Currentuser = _DbContext.User.FirstOrDefault(o => o.CorpMail == userLogin.CorpMail && o.Password == userLogin.Password);
 
@@ -163,7 +163,7 @@ namespace Backend.Controllers
 
         #region NewAuthenticate Method
         ///<summary>Authenticate method</summary> 
-        private User NewAuthenticate(UserLogin userLogin)
+        private User NewAuthenticate(NewUserLogin userLogin)
         {
             var Currentuser = _DbContext.User.FirstOrDefault(o => o.CorpMail == userLogin.CorpMail && o.PersonalMail == userLogin.PersonalMail);
 
@@ -178,7 +178,7 @@ namespace Backend.Controllers
 
         #region VerifyOTP Method
         ///<summary>VerifyOTP method</summary> 
-        private User VerifyOTP(UserLogin userLogin)
+        private User VerifyOTP(NewUserLogin userLogin)
         {
 
             var Currentuser = _DbContext.User.FirstOrDefault(o => o.CorpMail == userLogin.CorpMail && o.OTP == userLogin.OTP);
